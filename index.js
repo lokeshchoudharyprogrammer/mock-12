@@ -3,11 +3,13 @@ const mongoose = require("mongoose")
 
 const express = require("express")
 
+// const Jobrouter = require("./routes/Jobs.js")
+// Jobrouter
 const port = process.env.PORT_NUMBER || 3001
 const app = express();
-// const cors=require("cors")
+// const cros = require("cros")
 app.use(express.json());
-// app.use(cors())
+// app.use(cros())
 
 app.get("/", (req, res) => {
     res.send("<h1>Hello</h1>")
@@ -23,3 +25,7 @@ app.listen(3400, () => {
     }
     console.log("server Start")
 })
+
+
+// console.log(Jobrouter)
+// app.use("/jobs", Jobrouter);
