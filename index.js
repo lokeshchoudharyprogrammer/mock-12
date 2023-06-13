@@ -1,20 +1,21 @@
 
-const mongoose = require("mongoose")
-
-const express = require("express")
-
-// const Jobrouter = require("./routes/Jobs.js")
-// Jobrouter
-const port = process.env.PORT_NUMBER || 3001
-const app = express();
-// const cros = require("cros")
+const express = require('express');
+const mongoose = require('mongoose');
+const app = express()
 app.use(express.json());
-// app.use(cros())
+const cors = require("cors")
+app.use(cors())
+
+const jobsRouter = require('./routes/Jobs.js');
 
 app.get("/", (req, res) => {
     res.send("<h1>Hello</h1>")
 })
 
+app.use('/api/jobs', jobsRouter);
+
+// Middleware
+app.use(express.json());
 app.listen(3400, () => {
     try {
 
@@ -25,6 +26,7 @@ app.listen(3400, () => {
     }
     console.log("server Start")
 })
+
 
 
 // console.log(Jobrouter)
