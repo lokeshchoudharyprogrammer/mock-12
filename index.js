@@ -14,7 +14,6 @@ app.get("/", (req, res) => {
 
 app.use('/api/jobs', jobsRouter);
 
-// Middleware
 app.use(express.json());
 app.listen(3400, () => {
     try {
@@ -27,7 +26,3 @@ app.listen(3400, () => {
     console.log("server Start")
 })
 
-
-
-// console.log(Jobrouter)
-// app.use("/jobs", Jobrouter);
